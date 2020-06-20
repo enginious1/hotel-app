@@ -30,8 +30,7 @@ include 'navbar.php';
 				width:100%;	
 			}	
 			a {
-				border-radius: 14px !important;
-				
+				border-radius: 14px !important;				
 			}
 
 		

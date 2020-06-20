@@ -5,6 +5,7 @@ include 'dbconnect.php';
 
 
 if ($_POST['akcija'] == 'insert') {
+	
 	$ime = $_POST['ime'];
 	$prezime = $_POST['prezime'];
 	$e_mail = $_POST['e-mail'];	
@@ -15,10 +16,11 @@ if ($_POST['akcija'] == 'insert') {
 	$folder = 'uploads/cv_slike/';
 	move_uploaded_file($filetmpname, $folder.$slika);
 	
-	$insert = "INSERT INTO `zaposleni`(`radnik_id`, `ime`, `prezime`, `e_mail`, `slika`, `broj_telefona`, `pozicija`) VALUES (null, '$ime', '$prezime', '$e_mail', '$slika', '$telefon', '$pozicija')";
+	$insert = "INSERT INTO `zaposleni`(`ime`, `prezime`, `e_mail`, `slika`, `broj_telefona`, `pozicija`) VALUES ('$ime', '$prezime', '$e_mail', '$slika', '$telefon', '$pozicija')";
 	
 	
 	$results = $conn->query($insert);
+
 	$i=1;
 	
 	$sql = "SELECT * FROM zaposleni";

@@ -26,66 +26,63 @@ if(!$_SESSION['admin']){
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/css/tempusdominus-bootstrap-4.min.css">	
   	<style>
-  	body {		
-		background: #0264d6;
-		background: -moz-radial-gradient(center, ellipse cover,  #0264d6 1%, #1c2b5a 100%); 
-		background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(1%,#0264d6), color-stop(100%,#1c2b5a)); 
-		background: -webkit-radial-gradient(center, ellipse cover,  #0264d6 1%,#1c2b5a 100%); 
-		background: -o-radial-gradient(center, ellipse cover,  #0264d6 1%,#1c2b5a 100%); 
-		background: -ms-radial-gradient(center, ellipse cover,  #0264d6 1%,#1c2b5a 100%); 
-		background: radial-gradient(ellipse at center,  #0264d6 1%,#1c2b5a 100%); 
-		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0264d6', endColorstr='#1c2b5a',GradientType=1 ); 
-		height:calc(100vh);
-		width:100%;	
-	}
-	.display-3 {
-		color: white;
+		body {		
+			background: #0264d6;
+			background: -moz-radial-gradient(center, ellipse cover,  #0264d6 1%, #1c2b5a 100%); 
+			background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(1%,#0264d6), color-stop(100%,#1c2b5a)); 
+			background: -webkit-radial-gradient(center, ellipse cover,  #0264d6 1%,#1c2b5a 100%); 
+			background: -o-radial-gradient(center, ellipse cover,  #0264d6 1%,#1c2b5a 100%); 
+			background: -ms-radial-gradient(center, ellipse cover,  #0264d6 1%,#1c2b5a 100%); 
+			background: radial-gradient(ellipse at center,  #0264d6 1%,#1c2b5a 100%); 
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0264d6', endColorstr='#1c2b5a',GradientType=1 ); 
+			height:calc(100vh);
+			width:100%;	
+		}
+		.display-3 {
+			color: white;
+			}
+			
+		.card { 	
+			margin-top: 5%;
+			margin-left: auto;
+			margin-right: auto;
+			vertical-align: middle;
+			text-align: left;
+			width: 60%;		
 		}
 		
-	.card { 	
-		margin-top: 5%;
-		margin-left: auto;
-		margin-right: auto;
-		vertical-align: middle;
-		text-align: left;
-		width: 60%;		
-	}
-	
-	.card .card-header {	
+		.card .card-header {	
 
-		text-align: left;
-		font-size: 18px;
-		color: #fff;
+			text-align: left;
+			font-size: 18px;
+			color: #fff;
+			}
+			
+		.table {			
+			margin-left: auto;
+			margin-right: auto;	
+			text-align: center;
+			vertical-align: middle:
 		}
 		
-	.table {			
-		margin-left: auto;
-		margin-right: auto;	
-		text-align: center;
-		vertical-align: middle:
-	}
-	
-	.modal-content {
-		border-color: #ffffff !important;
-		background-image: url("blue-gradient-background.png");
-		background: #0264d6;
-		background: -moz-radial-gradient(center, ellipse cover,  #0264d6 1%, #1c2b5a 100%); 
-		background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(1%,#0264d6), color-stop(100%,#1c2b5a)); 
-		background: -webkit-radial-gradient(center, ellipse cover,  #0264d6 1%,#1c2b5a 100%); 
-		background: -o-radial-gradient(center, ellipse cover,  #0264d6 1%,#1c2b5a 100%); 
-		background: -ms-radial-gradient(center, ellipse cover,  #0264d6 1%,#1c2b5a 100%); 
-		background: radial-gradient(ellipse at center,  #0264d6 1%,#1c2b5a 100%); 
-		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0264d6', endColorstr='#1c2b5a',GradientType=1);				
+		.modal-content {
+			border-color: #ffffff !important;
+			background-image: url("blue-gradient-background.png");
+			background: #0264d6;
+			background: -moz-radial-gradient(center, ellipse cover,  #0264d6 1%, #1c2b5a 100%); 
+			background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(1%,#0264d6), color-stop(100%,#1c2b5a)); 
+			background: -webkit-radial-gradient(center, ellipse cover,  #0264d6 1%,#1c2b5a 100%); 
+			background: -o-radial-gradient(center, ellipse cover,  #0264d6 1%,#1c2b5a 100%); 
+			background: -ms-radial-gradient(center, ellipse cover,  #0264d6 1%,#1c2b5a 100%); 
+			background: radial-gradient(ellipse at center,  #0264d6 1%,#1c2b5a 100%); 
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0264d6', endColorstr='#1c2b5a',GradientType=1);				
+			}
+		.modal {
+			overflow: scroll;
 		}
-	.modal {
-		overflow: scroll;
-	}
-	
-
 	</style>	
 </head>
-<body>
-	
+<body>	
 	<div class="card border border-white" style="width: 50%; display:none;">
 		<h4 class="card-header text-center bg-info">
 			Računi
@@ -143,18 +140,20 @@ if(!$_SESSION['admin']){
 				<table class="table table-stripped" style="margin-bottom: 0;">
 					<thead class="table-info bordered">
 						<th scope="col">Račun</th>
+						<th scope="col">Ukupan račun</th>
 						<th scope="col">Gost</th>
 						<th scope="col">Datum prijema</th>
 						<th style="width: 130px; text-center;">Akcija</th>
 					</thead>
 					<tbody id="tabelaRMAIN" class="table-hover">
-					<?php $sql = "SELECT * FROM racunimain LEFT JOIN guests ON racunimain.gost_id = guests.guests_id WHERE racun_id > 0 ORDER BY broj_racuna ASC, broj_godine ASC";
+					<?php $sql = "SELECT guests.guests_id, guests.ime, guests.prezime, racunimain.racun_id, racunimain.broj_racuna, racunimain.broj_godine, racunimain.gost_id, racunimain.datum_izdavanja, SUM(racunidetailed.ukupan_racun) AS ukupanRacun FROM racunimain LEFT JOIN guests ON racunimain.gost_id = guests.guests_id LEFT JOIN racunidetailed ON racunimain.racun_id = racunidetailed.d_racun_id WHERE racun_id > 0 GROUP BY racunimain.racun_id ORDER BY broj_racuna ASC, broj_godine ASC";
 					$results = $conn->query($sql);
 					while ($row = $results->fetch_assoc()) {?>
 						<tr <?=$row['racun_id']?> class="table-success">						
-							<td><?=$row['broj_racuna'] . "/" . $row['broj_godine']?></td>
-							<td><?=$row['ime'] . " " . $row['prezime']?></td>
-							<td><?=date("d.m.Y H:i:s", strtotime($row['datum_izdavanja']));?></td>
+							<td style="vertical-align: middle;"><?=$row['broj_racuna'] . "/" . $row['broj_godine']?></td>
+							<td style="vertical-align: middle;"><?php if (!$row['ukupanRacun']) { echo "0€";} else {echo number_format ($row['ukupanRacun'], 2) . "€";}?></td>
+							<td style="vertical-align: middle;"><?=$row['ime'] . " " . $row['prezime']?></td>
+							<td style="vertical-align: middle;"><?=date("d.m.Y H:i:s", strtotime($row['datum_izdavanja']));?></td>
 							<td style="min-width: 130px;"><button class="btn btn-warning racunEdit" style="color: #fff;"data-toggle="modal" data-target="#racunModal" data-idrm= <?=$row['racun_id']?>
 							data-gost = <?=$row['gost_id']?>
 							data-broj = <?=$row['broj_racuna'] . "/" . $row['broj_godine']?> 

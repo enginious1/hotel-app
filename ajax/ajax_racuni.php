@@ -196,7 +196,7 @@ if ($_POST['akcija'] == 'pretragaRacuna') {
 		$sqlx = "AND racunimain.datum_izdavanja BETWEEN '$datumOd' AND '$datumDo'";
 	}
 
-	$sql = "SELECT * FROM racunimain LEFT JOIN guests ON racunimain.gost_id = guests.guests_id WHERE racun_id > 0 $sqlgost $sqlx ORDER BY broj_racuna ASC, broj_godine ASC";
+	$sql = "SELECT guests.guests_id, guests.ime, guests.prezime, racunimain.racun_id, racunimain.broj_racuna, racunimain.broj_godine, racunimain.gost_id, racunimain.datum_izdavanja, SUM(racunidetailed.ukupan_racun) AS ukupanRacun FROM racunimain LEFT JOIN guests ON racunimain.gost_id = guests.guests_id LEFT JOIN racunidetailed ON racunimain.racun_id = racunidetailed.d_racun_id WHERE racun_id > 0 $sqlgost $sqlx GROUP BY racunimain.racun_id ORDER BY broj_racuna ASC, broj_godine ASC";
 
 	$results = $conn->query($sql);
 	while ($row = $results->fetch_assoc()) {
@@ -204,6 +204,7 @@ if ($_POST['akcija'] == 'pretragaRacuna') {
 
 	<tr <?=$row['racun_id']?> class="table-success">						
 		<td style="vertical-align: middle;"><?=$row['broj_racuna'] . "/" . $row['broj_godine']?></td>
+		<td style="vertical-align: middle;"><?php if (!$row['ukupanRacun']) { echo "0€";} else {echo number_format ($row['ukupanRacun'], 2) . "€";}?></td>
 		<td style="vertical-align: middle;"><?=$row['ime'] . " " . $row['prezime']?></td>
 		<td style="vertical-align: middle;"><?=date("d.m.Y H:i:s", strtotime($row['datum_izdavanja']));?></td>
 		<td style="min-width: 130px; vertical-align: middle;"><button class="btn btn-warning racunEdit" style="margin-right: 10px; color: #fff;" data-toggle="modal" data-target="#racunModal" data-idrm= <?=$row['racun_id']?>

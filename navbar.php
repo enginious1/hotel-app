@@ -1,4 +1,6 @@
+<?php
 
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -61,9 +63,11 @@
 				<li class="nav-item">
 					<a class="nav-link" href="zaposleni.php"><i class="fas fa-briefcase"></i>  Zaposleni<span class="sr-only">(current)</span></a>
 				</li>
+				<?php if ($_SESSION['admin'] == 1) { ?>
 				<li class="nav-item">
 					<a class="nav-link" href="radnici.php"><i class="fas fa-user-shield"></i>  Korisnici<span class="sr-only">(current)</span></a>
-				</li>  
+				</li> 
+				<?php } ?>
 				<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" href="#" id='navbar_dropdown' role='button' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-layer-group"></i>  Dokumentacija<span class="sr-only">(current)</span></a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdown"> 

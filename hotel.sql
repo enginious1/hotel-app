@@ -7,7 +7,7 @@
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.3.18
 CREATE DATABASE hotel;
-USE DATABASE hotel;
+USE hotel;
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;

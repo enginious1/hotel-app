@@ -52,8 +52,9 @@ ob_start();
 	
 	<thead>
 		<tr>		
-			<th>Kalkulacije</th>
+			<th>Broj kalkulacije</th>
 			<th>Naziv dobavljaca</th>	
+			<th>Ukupna kalkulacija</th>	
 			<th>Datum prijema</th>	
 			<th>Napomena</th>
 		</tr>
@@ -61,16 +62,18 @@ ob_start();
 	<tbody>
 		<?php
 		
-		$sql_1 = "SELECT kalkulacijemain.dobavljaci_id, kalkulacijemain.racun_id, kalkulacijemain.datum_prijema, kalkulacijemain.broj_fakture, kalkulacijemain.broj_godine, kalkulacijemain.napomena, dobavljaci.dobavljaci_id, dobavljaci.ime FROM kalkulacijemain LEFT JOIN dobavljaci ON kalkulacijemain.dobavljaci_id = dobavljaci.dobavljaci_id";
+		$sql_1 = "SELECT kalkulacijemain.dobavljaci_id, kalkulacijemain.racun_id, kalkulacijemain.datum_prijema, kalkulacijemain.broj_fakture, kalkulacijemain.broj_godine, kalkulacijemain.napomena, dobavljaci.dobavljaci_id, dobavljaci.ime, SUM(kalkulacijedetailed.prodajnacena) AS pdc FROM kalkulacijemain LEFT JOIN dobavljaci ON kalkulacijemain.dobavljaci_id = dobavljaci.dobavljaci_id LEFT JOIN kalkulacijedetailed ON kalkulacijemain.racun_id = kalkulacijedetailed.racun_id GROUP BY kalkulacijemain.racun_id";
 	
 		$results1 = $conn->query($sql_1);
 			while ($red = $results1->fetch_assoc()) {		
 		?>		
 	<tr class="table-success">
-			<td><?=$red['broj_fakture'] . "/" . $red['broj_godine']?></td>
-			<td><?=$red['ime']?></td>
-			<td><?=$red['datum_prijema']?></td>	
-			<td><?=$red['napomena']?></td>
+		<td><?=$red['broj_fakture'] . "/" . $red['broj_godine']?></td>
+		<td><?=$red['ime']?></td>
+		<td><?php if (!$red['pdc']) { 
+		echo "0€"; } else {	echo number_format($red['pdc'], 2) . "€";} ?></td>
+		<td><?=$red['datum_prijema']?></td>	
+		<td><?=$red['napomena']?></td>
 	</tr>
 			<?php } ?>	
 	</tbody>

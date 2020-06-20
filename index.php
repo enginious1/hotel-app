@@ -149,14 +149,13 @@ $text_message = '';
 						<label>Šifra:</label>
 						<input type="password" class="form-control" name='password' placeholder="Šifra">
 					</div>	
-					<div class="form-inline">
-						<div class="mx-auto">
-							<button name="submit" value='Login' class="btn btn-info borderRad" style="width: 160px;">Prijavi se</button>
-							<button type="button" class="btn btn-info borderRad" style=" color: #fff; width: 160px" data-toggle="modal" data-target="#exampleModalCenter">Zaboravljena šifra?</button>
-						</div>
+					<div class="form-inline" style="width: 120%;">
+						
+							<button name="submit" value='Login' class="btn btn-info btn-sm borderRad" style="width: 140px; margin-right: 10px; margin-left: 10px;">Prijavi se</button>
+							<button type="button" class="btn btn-info btn-sm borderRad" style=" color: #fff; width: 140px" data-toggle="modal" data-target="#exampleModalCenter">Zaboravljena šifra?</button>
+						
 					</div>
-				</form>
-				
+				</form>				
 			</div>
 		</div>
 	</div>
