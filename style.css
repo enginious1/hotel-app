@@ -1,0 +1,176 @@
+
+
+body {
+	font-family: 'Antic', sans-serif;
+	}
+
+
+
+.main-head{
+    height: 150px;
+    background: #FFF;
+   
+}
+
+.sidenav {
+    height: 100%;
+	background: #0264d6;
+	background: -moz-radial-gradient(center, ellipse cover,  #0264d6 1%, #1c2b5a 100%); 
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(1%,#0264d6), color-stop(100%,#1c2b5a)); 
+	background: -webkit-radial-gradient(center, ellipse cover,  #0264d6 1%,#1c2b5a 100%); 
+	background: -o-radial-gradient(center, ellipse cover,  #0264d6 1%,#1c2b5a 100%); 
+	background: -ms-radial-gradient(center, ellipse cover,  #0264d6 1%,#1c2b5a 100%); 
+	background: radial-gradient(ellipse at center,  #0264d6 1%,#1c2b5a 100%); 
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0264d6', endColorstr='#1c2b5a',GradientType=1 ); 
+    overflow-x: hidden;
+	top: 0;	
+	height:calc(100vh);
+	width:100%;		
+}
+
+
+
+
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+}
+
+@media screen and (max-width: 450px) {
+    .login-form{
+        margin-top: 5%;
+    }
+
+    .register-form{
+        margin-top: 10%;
+    }
+}
+
+@media screen and (min-width: 768px){
+    .main{
+        margin-left: 50%; 
+		
+    }
+
+    .sidenav{
+		
+        width: 50%;
+        position: fixed;
+        z-index: 1;
+    
+    }
+
+    .login-form{
+        margin-top: 90%;
+    }
+
+    .register-form{
+        margin-top: 20%;
+    }
+}
+
+
+.login-main-text {
+	
+	margin-right: 15%;
+    margin-top: 25%;
+   
+    padding: 20px 0px;
+    color: #fff;
+	text-align: center;
+}
+
+.login-main-text h2{
+    font-weight: 300;	
+}
+
+.btn-black{
+    background-color: #000 !important;
+    color: #fff;
+}
+
+#css_round {
+	border-radius: 25px;
+	border: 2px solid white;	
+	padding: 36px;
+	width: 205px;
+	height: 100px;	
+}
+
+.dashboard a {	
+	min-width: 30%;
+	height: 30%;
+	margin: 10px 10px;
+	font-size: 18px;
+	vertical-align: center;
+	text-align: center;	
+	line-height: 80px;	
+}
+
+.display-3 {
+	font-family: 'Prompt', sans-serif;
+	padding: 50px 0;
+	text-align: center;
+	font-size: 50px !important;
+	
+}
+
+
+#tabela_usluge {
+	width: 30%;
+	margin-left:auto;
+	margin-right:auto;
+	font-size: 16px;
+	text-align: center;
+	vertical-align: middle;
+	
+}
+.usluge_search {
+	
+	font-size: 20px;
+	padding-bottom: 100px;
+	text-align: center;
+}
+
+
+.navbar {
+	
+    margin-top: 0 !important;
+    padding-bottom: 0 !important;
+	
+ }
+
+#tabela_zaposleni {
+	
+	width: 60%;
+	margin-left:auto;
+	margin-right:auto;
+	font-size: 16px;
+	text-align: center;
+	vertical-align: middle;	
+}
+
+#tabela_dobavljaci {
+	
+	width: 35%;
+	margin-left:auto;
+	margin-right:auto;
+	font-size: 16px;
+	text-align: center;
+	vertical-align: middle;
+	border-radius: 25px;
+	
+}
+
+#tabela_rezervacije {
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 16px;
+	text-align: center;
+	vertical-align: middle:	
+	
+}
+
+
+
+
